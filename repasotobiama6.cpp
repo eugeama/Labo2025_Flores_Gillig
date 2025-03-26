@@ -112,7 +112,7 @@ void actualizarEquipos(vector<Equipo>& equipos, Partido& partido) {
             } else if (partido.goles_local == partido.goles_visitante) {
                 equipos[i].puntos += 1;
                 equipos[i].historial += "E";
-            } else {
+            } else if {
                 equipos[i].historial += "D";
             }
         } 
@@ -126,7 +126,7 @@ void actualizarEquipos(vector<Equipo>& equipos, Partido& partido) {
             } else if (partido.goles_visitante == partido.goles_local) {
                 equipos[i].puntos += 1;
                 equipos[i].historial += "E";
-            } else {
+            } else if {
                 equipos[i].historial += "D";
             }
         }
