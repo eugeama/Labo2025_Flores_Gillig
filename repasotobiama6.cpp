@@ -13,7 +13,7 @@ struct Equipo {
     int goles_a_favor = 0;
     int goles_en_contra = 0;
     int puntos = 0;
-    string historial;
+    vector <char> historial;
 
     Equipo(string nombreEquipo) {
         nombre = nombreEquipo;
@@ -30,8 +30,8 @@ struct Equipo {
 struct Partido {
     string equipo_local;
     string equipo_visitante;
-    int goles_local;
-    int goles_visitante;
+    int goles_local=0;
+    int goles_visitante=0;
     string fecha;
     string estadio;
     
