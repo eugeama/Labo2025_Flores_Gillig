@@ -2,6 +2,11 @@
 #include <vector>
 using namespace std;
 
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+
 struct Jugador {
     string nombre;
     bool es_arquero;
@@ -13,13 +18,13 @@ struct Equipo {
     int goles_a_favor = 0;
     int goles_en_contra = 0;
     int puntos = 0;
-    vector <char> historial;
+    vector<char> historial;
 
     Equipo(string nombreEquipo) {
         nombre = nombreEquipo;
         for (int i = 0; i < 11; i++) {
             Jugador jugador;
-            cout << "Ingrese el nombre del jugador (el primer jugador será el arquero)" << i + 1 << " del equipo " << nombre << ": ";
+            cout << "Ingrese el nombre del jugador " << i + 1 << " (el primer jugador será el arquero) del equipo " << nombre << ": ";
             cin >> jugador.nombre;
             jugador.es_arquero = (i == 0); 
             jugadores.push_back(jugador);
@@ -34,8 +39,17 @@ struct Partido {
     int goles_visitante=0;
     string fecha;
     string estadio;
+}
     
-    void registrarPartido() {
+      for (int i = 0; i < 24; i++) {
+        string nombreEquipo;
+        cout << "Ingrese el nombre del equipo " << i + 1 << ": ";
+        cin >> nombreEquipo;
+        equipos.push_back(Equipo(nombreEquipo));
+      }
+    
+    void registrarPartido(vector<Partido> &partidos, vector<Equipo> &equipos) { //corregir funcion
+        Partido partido;
         cout << "Ingrese el nombre del equipo local: ";
         cin >> equipo_local;
         cout << "Ingrese el nombre del equipo visitante: ";
@@ -140,13 +154,6 @@ void mostrarPartido(vector<Partido>& partidos, string local, string visitante) {
 int main() {
     vector<Equipo> equipos;
     vector<Partido> partidos;
-
-    for (int i = 0; i < 24; i++) {
-        string nombreEquipo;
-        cout << "Ingrese el nombre del equipo " << i + 1 << ": ";
-        cin >> nombreEquipo;
-        equipos.push_back(Equipo(nombreEquipo));
-    }
 
     int cantidad_partidos;
     cout << "Ingrese la cantidad de partidos: ";
