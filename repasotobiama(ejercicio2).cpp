@@ -11,12 +11,9 @@ struct Producto {
     bool fecha_de_vencimiento;
 };
 
-const int FILAS = 3;
-const int COLUMNAS = 4;
-
-void ingresarProductos(Producto matriz[FILAS][COLUMNAS]) {
-    for (int i = 0; i < FILAS; i++) {
-        for (int j = 0; j < COLUMNAS; j++) {
+void ingresarProductos(Producto matriz[3][4]) {
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 4; j++) {
             cout << "Ingrese nombre del producto en fila " << i + 1 << ", columna " << j + 1 << ": ";
             cin >> matriz[i][j].nombre;
             cout << "Ingrese código de barra: ";
@@ -31,13 +28,13 @@ void ingresarProductos(Producto matriz[FILAS][COLUMNAS]) {
     }
 }
 
-int MayorValor(Producto matriz[FILAS][COLUMNAS]) {
+int MayorValor(Producto matriz[3][4]) {
     int columna_mayor = 0;
     int max_precio = 0;
 
-    for (int j = 0; j < COLUMNAS; j++) {
+    for (int j = 0; j < 4; j++) {
         int suma_columna = 0;
-        for (int i = 0; i < FILAS; i++) {
+        for (int i = 0; i < 3; i++) {
             suma_columna += matriz[i][j].precio;
         }
         if (suma_columna > max_precio) {
@@ -45,25 +42,25 @@ int MayorValor(Producto matriz[FILAS][COLUMNAS]) {
             columna_mayor = j;
         }
     }
-    return columna_mayor + 1;  // Se devuelve como 1-indexado
+    return columna_mayor + 1;
 }
 
-float calcularPromedio(Producto matriz[FILAS][COLUMNAS]) {
+float calcularPromedio(Producto matriz[3][4]) {
     float suma_precios = 0;
-    int total_productos = FILAS * COLUMNAS;
+    int total_productos = 3 * 4;
 
-    for (int i = 0; i < FILAS; i++) {
-        for (int j = 0; j < COLUMNAS; j++) {
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 4; j++) {
             suma_precios += matriz[i][j].precio;
         }
     }
     return suma_precios / total_productos;
 }
 
-int contarProductosConVencimiento(Producto matriz[FILAS][COLUMNAS]) {
+int contarProductosConVencimiento(Producto matriz[3][4]) {
     int contador = 0;
-    for (int i = 0; i < FILAS; i++) {
-        for (int j = 0; j < COLUMNAS; j++) {
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 4; j++) {
             if (matriz[i][j].fecha_de_vencimiento) {
                 contador++;
             }
@@ -73,12 +70,12 @@ int contarProductosConVencimiento(Producto matriz[FILAS][COLUMNAS]) {
 }
 
 int main() {
-    Producto matriz[FILAS][COLUMNAS];
+    Producto matriz[3][4];
 
     ingresarProductos(matriz);
 
     int columna_max = MayorValor(matriz);
-    string nombre_producto = matriz[1][2].nombre;  // Fila 2 (índice 1), Columna 3 (índice 2)
+    string nombre_producto = matriz[1][2].nombre;  
     float promedio_precios = calcularPromedio(matriz);
     int productos_con_vencimiento = contarProductosConVencimiento(matriz);
 
@@ -89,3 +86,4 @@ int main() {
 
     return 0;
 }
+
