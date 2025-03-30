@@ -5,7 +5,7 @@ using namespace std;
 
 struct Fecha
 {
-    int dia;
+    int dia; 
     int mes;
     int anio;
 };
