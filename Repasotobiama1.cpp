@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-struct fecha{
+struct fecha{ 
     int dia;
     int mes;
     int anio;
