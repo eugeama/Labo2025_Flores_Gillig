@@ -3,11 +3,15 @@ public class Circulo {
 
 
     public Circulo() {
+
         this.radio = 2;
+
     }
 
     public Circulo(int radio) {
+
         this.radio = radio;
+
     }
 
     public float calcularArea(int Pi) {
