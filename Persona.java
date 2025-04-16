@@ -1,5 +1,7 @@
+package Libros;
+
 public class Persona {
-    private String nombre;
+    String nombre;
     private int edad;
     private String direccion;
 
