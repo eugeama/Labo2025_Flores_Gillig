@@ -5,7 +5,7 @@ public class Cafetera {
     private int taza;
     private int cantidad;
 
-
+ 
     public Cafetera() {
         this.cantidadMaxima = 100;
         this.cantidadActual = 0;
