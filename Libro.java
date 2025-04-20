@@ -1,5 +1,5 @@
 package Libros;
-
+ 
 public class Libro {
     private String titulo;
     private Persona autor;
