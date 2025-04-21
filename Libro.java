@@ -1,5 +1,5 @@
 package Libros;
-
+ 
 public class Libro {
     private String titulo;
     private Persona autor;
@@ -62,8 +62,14 @@ public void setLibro(){
     public String getEditorial(){
         return editorial;
     }
-    public Fecha getfechaPublicacion(){
-        return fechaPublicacion;
+    public Fecha getfechaPublicaciondia(){
+        return fechaPublicacion.dia;
+    }
+    public Fecha getfechaPublicacionmes(){
+        return fechaPublicacion.mes;
+    }
+    public Fecha getfechaPublicacionanio(){
+        return fechaPublicacion.anio;
     }
 
     public void setTitulo(String titulo) {
@@ -81,14 +87,25 @@ public void setLibro(){
     public void setEditorial(String editorial) {
         this.editorial=editorial;
     }
-    public void setFechaPublicacion(Fecha fechaPublicacion) {
-        this.fechaPublicacion=fechaPublicacion;
+    public void setFechaPublicaciondia(Fecha fechaPublicaciondia) {
+        this.fechaPublicacion.dia=fechaPublicaciondia;
+    }
+    public void setFechaPublicacionmes(Fecha fechaPublicacionmes) {
+        this.fechaPublicacion.mes=fechaPublicacionmes;
+    }
+    public void setFechaPublicacionanio(Fecha fechaPublicacionanio) {
+        this.fechaPublicacion.anio=fechaPublicacionanio;
     }
 
 
 
     public void mostrarInfo(String ti,Persona au, String IS, int pa, String ed, Fecha fe){
-
+        System.out.println("Titulo del libro: "+ti);
+        System.out.println("Autor del libro: "+au);
+        System.out.println("ISBN del libro: "+IS);
+        System.out.println("número de páginas del libro: "+pa);
+        System.out.println("Editorial del libro: "+ed);
+        System.out.println("fecha de publicación del libro: "+fe);
     }
 
     public boolean anteriorA(Libro libro1, Libro libro2){
@@ -104,6 +121,18 @@ public void setLibro(){
         Libro libro1 = new Libro("El hambre", "vago", 194039, 129, "tontotown", 2, 3, 2016);
         Libro libro2 = new Libro();
 
+        System.out.println("Nombre del libro: "+libro1.getTitulo());
+        System.out.println("Autor del libro: "+libro1.getAutor());
+        System.out.println("ISBN del libro: "+libro1.getISBN());
+        System.out.println("Cantidad de páginas del libro: "+libro1.getPaginas());
+        System.out.println("Editorial del libro: "+libro1.getEditorial());
+        System.out.println("Fecha de publicación: "+libro1.getfechaPublicaciondia()+"/"+libro1.getfechaPublicacionmes()+"/"+libro1.getfechaPublicacionanio());
 
+         System.out.println("Nombre del libro: "+libro2.titulo);
+        System.out.println("Autor del libro: "+libro2.autor);
+        System.out.println("ISBN del libro: "+libro2.ISBN);
+        System.out.println("Cantidad de páginas del libro: "+libro2.paginas);
+        System.out.println("Editorial del libro: "+libro2.editorial);
+        System.out.println("Fecha de publicación: "+libro2.fechaPublicacion.dia+"/"+libro2.fechaPublicacion.mes+"/"+libro2.fechaPublicacion.anio);
     }
 }
