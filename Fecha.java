@@ -1,7 +1,7 @@
 package Libros;
 
 public class Fecha {
-    char dia;
+    int dia;
     int mes;
     int anio;
 

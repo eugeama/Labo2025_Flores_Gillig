@@ -1,7 +1,7 @@
 package Libros;
 
 public class Persona {
-    String nombre;
+    private String nombre;
     private int edad;
     private String direccion;
 
@@ -16,6 +16,18 @@ public class Persona {
         System.out.println(nombre);
         System.out.println(edad);
         System.out.println(direccion);
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getDireccion() {
+        return direccion;
     }
 
     public static void main(String[] args) {
