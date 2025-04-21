@@ -1,6 +1,6 @@
 public class Cancion {
     private String titulo;
-    private String autor;
+    private Persona autor;
 
     public Cancion() {
         this.titulo = "";
@@ -9,7 +9,7 @@ public class Cancion {
 
     public Cancion(String titulo, String autor) {
         this.titulo = titulo;
-        this.autor = autor;
+        this.autor = new Persona();
     }
 
     public String getTitulo() {
@@ -17,13 +17,13 @@ public class Cancion {
     }
 
     public void setTitulo(String titulo) {
-        this.titulo = titulo;
+        this.autor = new Persona();
     }
     public String getAutor() {
         return autor;
     }
 
     public void setAutor(String autor) {
-        this.autor = autor;
+        this.autor = new Persona();
     }
  }
