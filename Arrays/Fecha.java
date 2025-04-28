@@ -1,4 +1,4 @@
-package Libros;
+package CurlingP;
 
 public class Fecha {
     int dia;

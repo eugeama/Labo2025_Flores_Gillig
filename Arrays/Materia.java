@@ -14,6 +14,16 @@ public class Materia {
         this.alumnos = new ArrayList<Alumno>();
     }
 
+    public Materia(){
+        this.nombre= "Organización de las computadoras";
+        this.contenidos= new ArrayList<String>();
+        this.contenidos.add("semaforos");
+        this.contenidos.add("reloj");
+        this.contenidos.add("direccionamiento");
+        Alumno a1 = new Alumno("Ramona", "Flowers", 2, 8, 2003);
+        this.alumnos.add(a1);
+    }
+
 
     public String getNombre() {
         return nombre;
@@ -29,20 +39,15 @@ public class Materia {
 
     public void setContenidos(ArrayList<String> contenidos) {
 
-        contenidos = contenidos;
+        this.contenidos = contenidos;
     }
 
     public ArrayList<Alumno> getAlumnos() {
         return alumnos;
     }
 
-    public void setAlumnos(ArrayList<Alumno> alumnos) {
+    public void setAlumnos(String alumnos) {
         alumnos = alumnos;
-    }
-
-
-    public void agregarContenidos(String nuevoContenido){
-        contenidos.add(nuevoContenido);
     }
 
     public int promedioEdadAlumnos(){
@@ -52,8 +57,7 @@ public class Materia {
             edades+=alumno.calcularEdad(2025);
             cantidad++;
         }
-        int promedioEd= edades/cantidad;
-        return promedioEd;
+        return edades/cantidad;
     }
 
     public int promedioNotasAlumnos(){
@@ -66,19 +70,34 @@ public class Materia {
                 cantidad++;
             }
         }
-        int promedioN= promedios/cantidad;
-        return promedioN;
+        return promedios/cantidad;
     }
 
     public static void main(String[] args) {
-        Materia materia = new Materia("dbfdsl");
-        ArrayList<Alumno>alumnos= new ArrayList<Alumno>();
+        Materia materia = new Materia("historia");
+        ArrayList<String>nuevosContenidos= new ArrayList<String>();
 
-        materia.setNombre("historia");
-        materia.agregarContenidos("WW2");
-        materia.agregarContenidos("La caída de Constantinopla");
-        materia.agregarContenidos("El desembarque de Normandia");
-        materia.promedioEdadAlumnos();
-        materia.promedioNotasAlumnos();
+        Alumno a1 = new Alumno("Juan", "Perez", 5, 4, 2000);
+        Alumno a2 = new Alumno("Ana", "Gomez", 10, 7, 2002);
+        a2.Notas.add(2);
+        a2.Notas.add(10);
+        a2.Notas.add(7);
+        a2.Notas.add(4);
+
+        a1.Notas.add(2);
+        a1.Notas.add(8);
+        a1.Notas.add(5);
+        a1.Notas.add(3);
+        nuevosContenidos.add("ww2");
+        nuevosContenidos.add("La caída de Constantinopla");
+        nuevosContenidos.add("El desembarque de Normandia");
+
+        materia.setContenidos(nuevosContenidos);
+        materia.getAlumnos().add(a1);
+        materia.getAlumnos().add(a2);
+
+        System.out.println("El promedio de edad es: "+materia.promedioEdadAlumnos());
+        System.out.println("El promedio de notas es: "+materia.promedioNotasAlumnos());
+
     }
 }

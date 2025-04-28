@@ -9,11 +9,24 @@ public class Alumno {
     ArrayList<Integer> Notas;
 
 
-    public Alumno(String AN, String AP, int dia, int mes, int anio) {
-        this.AlumnoNom = AN;
-        this.AlumnoAp = AP;
-        this.fechaNa = new Fecha(anio, dia, mes);
+    public Alumno(String AlumnoNom, String AlumnoAp, int dia, int mes, int anio) {
+        this.AlumnoNom = AlumnoNom;
+        this.AlumnoAp = AlumnoAp;
+        this.fechaNa = new Fecha(dia, mes, anio);
         this.Notas = new ArrayList<Integer>();
+    }
+
+    public Alumno(){
+        this.AlumnoNom= "sdas";
+        this.AlumnoAp= "gfhlshf";
+        this.fechaNa.dia=2;
+        this.fechaNa.mes=2;
+        this.fechaNa.anio=2008;
+        this.Notas = new ArrayList<Integer>();
+        this.Notas.add(3);
+        this.Notas.add(8);
+        this.Notas.add(6);
+        this.Notas.add(10);
     }
 
 
@@ -58,9 +71,8 @@ public class Alumno {
     }
 
     public int menorNota() {
-        if(Notas.isEmpty()) return 0;
 
-        int meNota = Notas.get(0);
+        int meNota = 10;
         for (Integer nota : Notas) {
             if (nota < meNota) {
                 meNota = nota;
@@ -72,9 +84,8 @@ public class Alumno {
     }
 
     public int mayorNota() {
-        if(Notas.isEmpty()) return 0;
 
-        int maNota = Notas.get(0);
+        int maNota = 0;
         for (Integer nota : Notas) {
 
             if (nota > maNota) {
@@ -99,6 +110,7 @@ public class Alumno {
         alumno.agregaNotas(3);
         System.out.println("la mayor nota del alumno es: "+ alumno.mayorNota());
         System.out.println("La menor nota del alumno es: "+ alumno.menorNota());
+
     }
 
 }
