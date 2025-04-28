@@ -3,75 +3,82 @@ package Libros;
 import java.util.ArrayList;
 
 public class CD {
-    private int posici;
-    private String nuevacancion;
-    ArrayList<Cancion>cds = new ArrayList<Cancion>();
-    ArrayList<Cancion>cds2 = new ArrayList<Cancion>();
+    ArrayList<Cancion>canciones;
 
+    public ArrayList<Cancion> getCanciones() {
+
+        return canciones;
+    }
+    public void setCanciones(ArrayList<Cancion> cds) {
+        this.canciones = cds;
+    }
 
     public CD() {
-        cds.add(new Cancion("papa","pedro",40,"pipi 243",1));
-        cds.add(new Cancion("tutu","paco",40,"pipe 243",2));
-        cds.add(new Cancion("lele","juan",40,"pipa 243",3));
+        this.canciones = new ArrayList<Cancion>();
+        this.canciones.add(new Cancion());
+        this.canciones.add(new Cancion("papa","pedro",40,"pipi 243"));
+        this.canciones.add(new Cancion("tutu","paco",40,"pipe 243"));
+        this.canciones.add(new Cancion("lele","juan",40,"pipa 243"));
 
     }
 
-    public CD(ArrayList<Cancion> cds2, int posicion) {
-        cds2.add(new Cancion("Billie Jean","Catriel",24,"Acha 45",1));
-        cds2.add(new Cancion("Thriller","Van Halen",32,"Losa 78",2));
-        cds2.add(new Cancion("Bad","Luck Ra",56,"Pong 921",3));
-    }
-
-    public ArrayList<Cancion> getCds() {
-        return cds;
-    }
-    public void setCds(ArrayList<Cancion> cds) {
-        this.cds = cds;
+    public CD(ArrayList<Cancion> canciones) {
+        this.canciones = canciones;
     }
 
 
-    public ArrayList<Cancion> getCds2() {
-        return cds2;
+    public ArrayList<Cancion> agregar(Cancion cancionNueva) {
+        canciones.add(cancionNueva);
+        return canciones;
     }
-    public void setCds2(ArrayList<Cancion> cds2) {
-        this.cds2 = cds2;
-    }
-
-
-    public int getPosicion() {
-        return posici;
-    }
-    public void setPosicion(int pos){
-        this.posici= pos;
-    }
-
 
     public float numeroCanciones() {
         int total = 0;
-        for (Cancion cd: cds) {
+        for (Cancion cancion: canciones) {
             total++;
         }
         return total;
     }
 
     public void verCancion(int posici) {
-        System.out.println(cds.get(posici-1).getTitulo());
+
+        System.out.println(canciones.get(posici-1).getTitulo());
     }
 
-    public float grabaCancion(int posici, Cancion nuevaCancion) {
-        for(Cancion cd: cds)
-        if (cd.getPosicion() == posici){
-            cd.getTitulo()=nuevacancion;
+    public ArrayList<Cancion> grabaCancion(int posici, Cancion nuevaCancion) {
+        for (int i = 0; i < canciones.size(); i++) {
+            if (i + 1 == posici) {
+                System.out.println("Cancion que se va a reemplazar: " + canciones.get(i).getTitulo());
+                System.out.println("Cancion por la que se va a reemplazar: " + nuevaCancion);
+                canciones.set(i, nuevaCancion);
+            }
         }
+        return canciones;
+    }
+    public ArrayList<Cancion> agrega (Cancion nuevaCancion) {
+        canciones.add(nuevaCancion);
+        return canciones;
     }
 
-    public float agrega(Cancion cancion) {
-        ArrayList<String>canciones = new ArrayList<String>();
-        canciones.add(new String("Intergalactic"));
-    }
-    public float elimina(int posicion) {
+    public ArrayList<Cancion> elimina(int posici) {
+        canciones.remove(posici);
 
+        return canciones;
     }
+
     public static void main(String[] args){
+        CD cd = new CD();
+        Cancion nuevaCancion=new Cancion();
+
+        System.out.println("Ingrese un nuevo titulo: ");
+        nuevaCancion.setTitulo("pipi");
+
+        cd.numeroCanciones();
+        cd.verCancion(2);
+        cd.grabaCancion(2, nuevaCancion);
+        cd.agrega(nuevaCancion);
+        cd.elimina(4);
+
+
     }
 }
