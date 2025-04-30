@@ -6,7 +6,7 @@ public class Alumno {
     private String AlumnoNom;
     private String AlumnoAp;
     private Fecha fechaNa;
-    ArrayList<Integer> Notas;
+    private ArrayList<Integer> Notas;
 
 
     public Alumno(String AlumnoNom, String AlumnoAp, int dia, int mes, int anio) {

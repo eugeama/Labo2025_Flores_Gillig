@@ -76,18 +76,19 @@ public class Materia {
     public static void main(String[] args) {
         Materia materia = new Materia("historia");
         ArrayList<String>nuevosContenidos= new ArrayList<String>();
+        ArrayList<Integer>Notas= new ArrayList<Integer>();
 
         Alumno a1 = new Alumno("Juan", "Perez", 5, 4, 2000);
         Alumno a2 = new Alumno("Ana", "Gomez", 10, 7, 2002);
-        a2.Notas.add(2);
-        a2.Notas.add(10);
-        a2.Notas.add(7);
-        a2.Notas.add(4);
+        a2.getNotas().add(2);
+        a2.getNotas().add(10);
+        a2.getNotas().add(7);
+        a2.getNotas().add(4);
 
-        a1.Notas.add(2);
-        a1.Notas.add(8);
-        a1.Notas.add(5);
-        a1.Notas.add(3);
+        a1.getNotas().add(2);
+        a1.getNotas().add(8);
+        a1.getNotas().add(5);
+        a1.getNotas().add(3);
         nuevosContenidos.add("ww2");
         nuevosContenidos.add("La caída de Constantinopla");
         nuevosContenidos.add("El desembarque de Normandia");
