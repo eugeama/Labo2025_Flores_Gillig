@@ -3,7 +3,6 @@ package repaso;
 public class Sistema {
     private String direccion;
     private int codPostal;
-    private int estanteria;
     private String comuna;
 
     public String getDireccion() {

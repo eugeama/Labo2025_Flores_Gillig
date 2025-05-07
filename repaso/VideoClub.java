@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class VideoClub {
     ArrayList<Sistema> videoClubs;
-    ArrayList<Pelicula> estanterias;
+    ArrayList<Estanteria> estanterias;
 
 
     public VideoClub() {
@@ -127,6 +127,8 @@ public class VideoClub {
 
         return 0;
     }
+
+
 
 
     public static void main() {
