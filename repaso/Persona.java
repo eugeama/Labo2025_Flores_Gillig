@@ -2,11 +2,11 @@ package repaso;
 
 public class Persona {
     private String nombre;
-    private int edad;
+    private Integer edad;
     private String direccion;
 
 
-    public Persona(String nom, int ed, String dire) {
+    public Persona(String nom, Integer ed, String dire) {
         this.nombre = nom;
         this.edad = ed;
         this.direccion = dire;
@@ -18,7 +18,7 @@ public class Persona {
         System.out.println(direccion);
     }
 
-    public int getEdad() {
+    public Integer getEdad() {
         return edad;
     }
 
