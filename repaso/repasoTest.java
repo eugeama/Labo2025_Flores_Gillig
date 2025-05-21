@@ -1,10 +1,18 @@
 package repaso;
 
 
+<<<<<<< HEAD
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
+=======
+import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+>>>>>>> 0111312c0094a9de77fb330224ec27069017960d
 
 public class repasoTest {
 
@@ -23,7 +31,26 @@ public class repasoTest {
         est.altaPeliculas(p4);
         video.altaEstanteria(est);
 
+<<<<<<< HEAD
         assertEquals(peli.getNombre(), video.peliculaMayorDuracion());
         assertEquals(est.getNumero(), video.peliculaMayorDuracion());
+=======
+        assertEquals(p3.getNombre(), video.peliculaMayorDuracion().getNombre());
+    }
+
+    @Test
+    public void testActoresMayores(){
+        Videoclub video = new Videoclub();
+        Estanteria est = new Estanteria();
+        Pelicula peli = new Pelicula();
+        ArrayList<Persona> agregarActores = new ArrayList<>();
+        Persona actor1 = new Persona("lolo", 25, "carlos antonio lopez");
+        Persona actor2 = new Persona("anita", 49, "carlos antonio lopez");
+        agregarActores.add(actor1);
+        agregarActores.add(actor2);
+        peli.setActores(agregarActores);
+
+        assertEquals(actor1.);
+>>>>>>> 0111312c0094a9de77fb330224ec27069017960d
     }
 }
