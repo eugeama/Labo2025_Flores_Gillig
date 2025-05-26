@@ -1,28 +1,30 @@
 package Almuerzos;
 import Autos.Fecha;
+import Libros.Persona;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class Pedido {
     private Fecha fechaCreacion;
-    private Boolean alumno;
-    private Boolean profesor;
+    ArrayList<Plato> platos;
     private PersonaAlmuerzo solicitante;
     private Fecha fechaEntrega;
     private String estadoEntrega;
 
 
-    public Pedido(String nombre, int precio, int dia, int mes, int anio, Boolean alumno, Boolean profesor, String estadoEntrega){
+    public Pedido(int dia, int mes, int anio, String nombre, String apellido, String estadoEntrega){
         this.fechaCreacion=new Fecha(dia, mes, anio);
-        this.alumno= alumno;
-        this.profesor= profesor;
+        this.platos= new ArrayList<>();
+        this.solicitante= new PersonaAlmuerzo(nombre, apellido);
         this.fechaEntrega=new Fecha(dia, mes, anio);
         this.estadoEntrega=estadoEntrega;
     }
 
     public Pedido() {
-        super("",0);
         this.fechaCreacion = new Fecha(0,0,0);
-        this.alumno =false;
-        this.profesor =false;
+        this.platos=new ArrayList<>();
+        this.solicitante= new PersonaAlmuerzo("","");
         this.solicitante= new PersonaAlmuerzo();
         this.fechaEntrega = new Fecha(0,0,0);
         this.estadoEntrega="";
@@ -36,22 +38,6 @@ public class Pedido {
 
     public void setFechaCreacion(Fecha fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
-    }
-
-    public Boolean getAlumno() {
-        return alumno;
-    }
-
-    public void setAlumno(Boolean alumno) {
-        this.alumno = alumno;
-    }
-
-    public Boolean getProfesor() {
-        return profesor;
-    }
-
-    public void setProfesor(Boolean profesor) {
-        this.profesor = profesor;
     }
 
     public Fecha getFechaEntrega() {
@@ -78,6 +64,20 @@ public class Pedido {
         this.solicitante = solicitante;
     }
 
+    public ArrayList<Plato> getPlatos() {
+        return platos;
+    }
 
-    public void
+    public void setPlatos(ArrayList<Plato> platos) {
+        this.platos = platos;
+    }
+
+
+    public int calcularPorcentaje(){
+        int porcentajeTotal= 0;
+        int porcentaje= 0;
+        porcentaje= ((Profesor)this.solicitante).getPorcDescuento()/100;
+        porcentajeTotal=
+        return porcentajeTotal;
+    }
 }
