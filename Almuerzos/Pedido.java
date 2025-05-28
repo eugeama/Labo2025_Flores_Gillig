@@ -1,28 +1,28 @@
 package Almuerzos;
-import Autos.Fecha;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class Pedido {
     private Fecha fechaCreacion;
-    private Boolean alumno;
-    private Boolean profesor;
+    Plato platos;
     private PersonaAlmuerzo solicitante;
     private Fecha fechaEntrega;
     private String estadoEntrega;
 
 
-    public Pedido(String nombre, int precio, int dia, int mes, int anio, Boolean alumno, Boolean profesor, String estadoEntrega){
+    public Pedido(int dia, int mes, int anio, String nombre, String apellido, String estadoEntrega){
         this.fechaCreacion=new Fecha(dia, mes, anio);
-        this.alumno= alumno;
-        this.profesor= profesor;
+        this.platos= new Plato();
+        this.solicitante= new PersonaAlmuerzo(nombre, apellido);
         this.fechaEntrega=new Fecha(dia, mes, anio);
         this.estadoEntrega=estadoEntrega;
     }
 
     public Pedido() {
-        super("",0);
         this.fechaCreacion = new Fecha(0,0,0);
-        this.alumno =false;
-        this.profesor =false;
+        this.platos=new Plato();
+        this.solicitante= new PersonaAlmuerzo("","");
         this.solicitante= new PersonaAlmuerzo();
         this.fechaEntrega = new Fecha(0,0,0);
         this.estadoEntrega="";
@@ -36,22 +36,6 @@ public class Pedido {
 
     public void setFechaCreacion(Fecha fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
-    }
-
-    public Boolean getAlumno() {
-        return alumno;
-    }
-
-    public void setAlumno(Boolean alumno) {
-        this.alumno = alumno;
-    }
-
-    public Boolean getProfesor() {
-        return profesor;
-    }
-
-    public void setProfesor(Boolean profesor) {
-        this.profesor = profesor;
     }
 
     public Fecha getFechaEntrega() {
@@ -78,6 +62,17 @@ public class Pedido {
         this.solicitante = solicitante;
     }
 
+    public Plato getPlatos() {
+        return platos;
+    }
 
-    public void
+    public void setPlatos(Plato platos) {
+        this.platos = platos;
+    }
+
+
+    public double calcularPrecioConDescuento(Plato plato, PersonaAlmuerzo solicitante) {
+        int descuento =  ((Profesor)this.solicitante).getPorcDescuento();
+        return plato.getPrecio() - (plato.getPrecio() * descuento / 100);
+    }
 }
