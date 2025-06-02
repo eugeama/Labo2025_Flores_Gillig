@@ -48,4 +48,12 @@ public class Dispositivo {
     public void setAnioAdquisicion(Fecha anioAdquisicion) {
         this.anioAdquisicion = anioAdquisicion;
     }
+
+    public Boolean recorrer() {
+        boolean alarma= false;
+        if (this.getMedida() > this.getUmbralInicial()) {
+            alarma= true;
+        }
+        return alarma;
+    }
 }

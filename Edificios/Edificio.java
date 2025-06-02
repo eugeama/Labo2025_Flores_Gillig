@@ -38,4 +38,32 @@ public class Edificio {
     public void setSensoresPresion(ArrayList<SensorPresion> sensoresPresion) {
         this.sensoresPresion = sensoresPresion;
     }
+
+    public void recorreSensores(){
+        for(DetectorHumo humo: detectoresHumo){
+            humo.recorrer();
+        }
+        for(SensorTemperatura temperatura: sensoresTemperatura){
+            temperatura.recorrer();
+        }
+        for(SensorPresion presion: sensoresPresion){
+            presion.recorrer();
+        }
+    }
+
+    public void sensorCompuesto(){
+        int temperaturaTotal= 0;
+        int umbralPromedio= 0;
+        for(DetectorHumo humo: detectoresHumo) {
+            for (SensorTemperatura temperatura : sensoresTemperatura) {
+                for (SensorPresion presion : sensoresPresion) {
+                    temperaturaTotal= (temperaturaTotal + humo.getMedida() + temperatura.getMedida() + presion.getMedida())/3;
+                    umbralPromedio= (umbralPromedio + humo.getUmbralInicial() + temperatura.getUmbralInicial() + presion.getUmbralInicial())/3;
+                }
+            }
+        }
+        if(temperaturaTotal/umbralPromedio>umbralPromedio){
+            System.out.println("Umbral superado, se va activar la alarma");
+        }
+    }
 }
