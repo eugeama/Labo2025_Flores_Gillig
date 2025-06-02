@@ -49,11 +49,13 @@ public class Dispositivo {
         this.anioAdquisicion = anioAdquisicion;
     }
 
-    public Boolean recorrer() {
-        boolean alarma= false;
+    public void recorrer() {
         if (this.getMedida() > this.getUmbralInicial()) {
-            alarma= true;
+            disparaAlarma();
         }
-        return alarma;
+    }
+
+    public void disparaAlarma(){
+        System.out.println("");
     }
 }

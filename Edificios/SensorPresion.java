@@ -7,12 +7,8 @@ public class SensorPresion extends Dispositivo {
         super(estado, medida, umbralInicial, dia, mes, anio);
     }
 
-
-    public void comprobar() {
-        recorrer();
-        if(recorrer()==true){
-            System.out.println("Sensor de presión activado");
-        }
-
+    @Override
+    public void disparaAlarma() {
+        System.out.println("Sensor de presión activado");
     }
 }

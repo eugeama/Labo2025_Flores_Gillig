@@ -7,11 +7,8 @@ public class SensorTemperatura extends Dispositivo {
         super(estado, medida, umbralInicial, dia, mes, anio);
     }
 
-    public void comprobar() {
-        recorrer();
-        if(recorrer()==true){
-            System.out.println("¡Cuidado! La temperatura sube");
-        }
-
+    @Override
+    public void disparaAlarma() {
+        System.out.println("¡Cuidado! La temperatura sube");
     }
 }

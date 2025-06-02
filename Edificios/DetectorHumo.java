@@ -7,11 +7,8 @@ public class DetectorHumo extends Dispositivo{
         super(estado, medida, umbralInicial, dia, mes, anio);
     }
 
-    public void comprobar() {
-        recorrer();
-        if(recorrer()==true){
-            System.out.println("Llamando a los bomberos");
-        }
-
+    @Override
+    public void disparaAlarma() {
+        System.out.println("Llamando a los bomberos");
     }
 }
