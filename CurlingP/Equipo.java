@@ -6,10 +6,10 @@ public class Equipo {
     private String nombreEquipo;
     private String barrioEquipo;
     private ArrayList<Jugador>equipo;
-    private String disponibilidad;
+    private Turno disponibilidad;
     private int partidosJugados;
 
-    public Equipo(String nombreEq, String barrioEq, String disp, int partJugados) {
+    public Equipo(String nombreEq, String barrioEq, Turno disp, int partJugados) {
         this.nombreEquipo = nombreEq;
         this.barrioEquipo = barrioEq;
         this.disponibilidad = disp;
@@ -42,11 +42,11 @@ public class Equipo {
         this.equipo = equipo;
     }
 
-    public String getDisponibilidad() {
+    public Turno getDisponibilidad() {
         return disponibilidad;
     }
 
-    public void setDisponibilidad(String disponibilidad) {
+    public void setDisponibilidad(Turno disponibilidad) {
         this.disponibilidad = disponibilidad;
     }
 

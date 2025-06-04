@@ -1,12 +1,12 @@
 package CurlingP;
 
 public class Partido extends Fecha{
-    private String TurnoPar;
+    private Turno TurnoPar;
     private Equipo equipo1;
     private Equipo equipo2;
 
 
-    public Partido(int dia, int mes, int anio, Equipo equip1, Equipo equip2, String TurnoP) {
+    public Partido(int dia, int mes, int anio, Equipo equip1, Equipo equip2, Turno TurnoP) {
         super(dia, mes, anio);
         this.TurnoPar = TurnoP;
         this.equipo1 = equip1;
@@ -14,11 +14,11 @@ public class Partido extends Fecha{
     }
 
 
-    public String getTurnoPar() {
+    public Turno getTurnoPar() {
         return TurnoPar;
     }
 
-    public void setTurnoPar(String turnoPar) {
+    public void setTurnoPar(Turno turnoPar) {
         TurnoPar = turnoPar;
     }
 

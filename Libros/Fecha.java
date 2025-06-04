@@ -30,18 +30,6 @@ public class Fecha {
         return anio;
     }
 
-    public void setDia(int dia) {
-        this.dia = dia;
-    }
-
-    public void setMes(int mes) {
-        this.mes = mes;
-    }
-
-    public void setAnio(int anio) {
-        this.anio = anio;
-    }
-
     public int valida(){
         if (dia > 31) {
             this.dia=31;

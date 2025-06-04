@@ -1,7 +1,5 @@
 package CurlingP;
 
-import Libros.Fecha;
-
 public class Persona2 extends Fecha {
     private String nombre;
     private String apellido;

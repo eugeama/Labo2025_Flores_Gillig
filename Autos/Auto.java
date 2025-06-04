@@ -4,7 +4,7 @@ public class Auto extends Vehiculo {
     private String patente;
     private boolean descapotable;
 
-    public Auto(String marca, String modelo, String color, int cantRuedas, String patente, boolean descapotable){
+    public Auto(String marca, String modelo, Color color, int cantRuedas, String patente, boolean descapotable){
         super(marca, modelo, color, cantRuedas);
         this.patente= patente;
         this.descapotable= descapotable;

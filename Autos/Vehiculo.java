@@ -3,10 +3,10 @@ package Autos;
 public class Vehiculo extends Fecha{
     private String marca;
     private String modelo;
-    private String color;
+    private Color color;
     private int cantRuedas;
 
-    public Vehiculo(String marca, String modelo, String color, int cantRuedas){
+    public Vehiculo(String marca, String modelo, Color color, int cantRuedas){
         this.marca= marca;
         this.modelo= modelo;
         this.color= color;
@@ -30,11 +30,11 @@ public class Vehiculo extends Fecha{
         this.modelo = modelo;
     }
 
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(Color color) {
         this.color = color;
     }
 

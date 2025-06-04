@@ -4,7 +4,7 @@ public class Camioneta extends Vehiculo {
     private String patente;
     private int capacidad;
 
-    public Camioneta(String marca, String modelo, String color, int cantRuedas, String patente, int capacidad){
+    public Camioneta(String marca, String modelo, Color color, int cantRuedas, String patente, int capacidad){
         super(marca, modelo, color, cantRuedas);
         this.patente= patente;
         this.capacidad= capacidad;

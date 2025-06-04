@@ -1,13 +1,15 @@
 package Libros;
+import CurlingP.Persona2;
  
 public class Libro extends Persona2{
     private String titulo;
     private int ISBN;
     private int paginas;
-    private String editorial;
+    private Editorial editorial;
     private Fecha fechaPublicacion;
 
-public Libro (String titulo, String nombre, String apellido, int ISBN, int pagina, String editorial, int dia, int mes, int anio) {
+
+public Libro (String titulo, String nombre, String apellido, int ISBN, int pagina, Editorial editorial, int dia, int mes, int anio) {
     super(dia,mes,anio,nombre,apellido);
     this.titulo = titulo;
     this.ISBN = ISBN;
@@ -17,7 +19,6 @@ public Libro (String titulo, String nombre, String apellido, int ISBN, int pagin
     this.fechaPublicacion.mes=mes;
     this.fechaPublicacion.anio=anio;
 
-
 }
 
 public Libro(){
@@ -25,7 +26,7 @@ public Libro(){
         this.titulo = "El Hambre";
         this.ISBN = 91218;
         this.paginas = 103;
-        this.editorial = "Losada";
+        this.editorial = Editorial.EL_ATENEO;
         this.fechaPublicacion.dia= 2;
         this.fechaPublicacion.mes=6;
         this.fechaPublicacion.anio=2024;
@@ -35,12 +36,9 @@ public void setLibro(){
     this.titulo= "Gloria Maldita";
     this.setNombre("pepe");
     this.setApellido("Mastantuono");
-    this.setDia(2);
-    this.setMes(5);
-    this.setAnio(1592);
     this.ISBN=14318;
     this.paginas=140;
-    this.editorial="sillytown";
+    this.editorial=Editorial.SUDAMERICANA;
     this.fechaPublicacion.dia=5;
     this.fechaPublicacion.mes= 2;
     this.fechaPublicacion.anio= 2019;
@@ -58,7 +56,7 @@ public void setLibro(){
         return paginas;
     }
 
-    public String getEditorial(){
+    public Editorial getEditorial(){
         return editorial;
     }
     public int getfechaPublicaciondia(){
@@ -83,7 +81,7 @@ public void setLibro(){
     public void setPaginas(int paginas) {
         this.paginas=paginas;
     }
-    public void setEditorial(String editorial) {
+    public void setEditorial(Editorial editorial) {
         this.editorial=editorial;
     }
     public void setFechaPublicaciondia(int fechaPublicaciondia) {
@@ -101,7 +99,8 @@ public void setLibro(){
 
 
 
-    public void mostrarInfo(String ti,Persona au, String IS, int pa, String ed, Fecha fe){
+
+    public void mostrarInfo(String ti,Persona2 au, String IS, int pa, String ed, Fecha fe){
         System.out.println("Titulo del libro: "+ti);
         System.out.println("Autor del libro: "+au);
         System.out.println("ISBN del libro: "+IS);
