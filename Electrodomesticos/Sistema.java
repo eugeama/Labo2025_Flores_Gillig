@@ -1,5 +1,7 @@
 package Electrodomesticos;
 
+import CurlingP.Equipo;
+
 import java.util.ArrayList;
 
 public class Sistema {
@@ -75,5 +77,69 @@ public class Sistema {
     }
 
 
+    public int stockTelevisor (){
+        int cantTele= 0;
+        for (Televisor tele: televisores) {
+            cantTele = cantTele + 1;
+        }
+        return cantTele;
+    }
 
+    public int stockEquipoSonido (){
+        int cantSonido= 0;
+        for (EquipoSonido sonido: equiposSonido){
+            cantSonido= cantSonido +1;
+        }
+        return cantSonido;
+    }
+
+    public int stockCargador(){
+        int cantPortatil= 0;
+        for (CargadorPortatil cargador: cargadores){
+            cantPortatil= cantPortatil+1;
+        }
+        return cantPortatil;
+    }
+
+    public String mayorStock(){
+        EquipoSonido e1= new EquipoSonido();
+        Televisor t1= new Televisor();
+        CargadorPortatil c1= new CargadorPortatil();
+        String nombreProducto= "";
+        int cantPortatil= stockCargador();
+        int cantSonido= stockEquipoSonido();
+        int cantTele= stockTelevisor();
+
+        if(cantPortatil > cantSonido && cantPortatil>cantTele){
+            nombreProducto= c1.getNombre();
+        }
+        if (cantSonido>cantPortatil && cantSonido>cantTele){
+            nombreProducto= e1.getNombre();
+        }
+        if(cantTele>cantSonido && cantTele>cantPortatil){
+            nombreProducto= t1.getNombre();
+        }
+        return nombreProducto;
+    }
+
+    public String menorStock(){
+        EquipoSonido e1= new EquipoSonido();
+        Televisor t1= new Televisor();
+        CargadorPortatil c1= new CargadorPortatil();
+        String nombreProducto= "";
+        int cantPortatil= stockCargador();
+        int cantSonido= stockEquipoSonido();
+        int cantTele= stockTelevisor();
+
+        if(cantPortatil < cantSonido && cantPortatil<cantTele){
+            nombreProducto= c1.getNombre();
+        }
+        if (cantSonido<cantPortatil && cantSonido<cantTele){
+            nombreProducto= e1.getNombre();
+        }
+        if(cantTele<cantSonido && cantTele<cantPortatil){
+            nombreProducto= t1.getNombre();
+        }
+        return nombreProducto;
+    }
 }
