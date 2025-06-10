@@ -23,10 +23,17 @@ public class Entrada extends Plato{
         this.temperatura = temperatura;
     }
 
-    @Override
-    void mostrarPasos() {
-        for(String paso: pasos){
-            System.out.println(paso);
-        }
+@Override
+void mostrarPasos() {
+    if (temperatura == Temperatura.CALIENTE) {
+        System.out.println("Recordá prender el horno.");
+    }
+
+    for (String paso : pasos) {
+        System.out.println(paso);
+    }
+
+    if (temperatura == Temperatura.FRIO) {
+        System.out.println("Guardá la preparación en la heladera.");
     }
 }
