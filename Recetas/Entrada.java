@@ -2,17 +2,17 @@ package Recetas;
 
 import java.util.ArrayList;
 
-public class Entrada extends Plato{
+public class Entrada extends Plato {
     private Temperatura temperatura;
 
-    public Entrada (String nombrePlato, Nivel nivelDificultad, ArrayList<String> pasos, Temperatura temperatura){
+    public Entrada(String nombrePlato, Nivel nivelDificultad, ArrayList<String> pasos, Temperatura temperatura) {
         super(nombrePlato, nivelDificultad, pasos);
-        this.temperatura= temperatura;
+        this.temperatura = temperatura;
     }
 
-    public Entrada(){
+    public Entrada() {
         super("", Nivel.AVANZADO, new ArrayList<>());
-        this.temperatura= Temperatura.FRIO;
+        this.temperatura = Temperatura.FRIO;
     }
 
     public Temperatura getTemperatura() {
@@ -23,17 +23,18 @@ public class Entrada extends Plato{
         this.temperatura = temperatura;
     }
 
-@Override
-void mostrarPasos() {
-    if (temperatura == Temperatura.CALIENTE) {
-        System.out.println("Recordá prender el horno.");
-    }
+    @Override
+    void mostrarPasos() {
+        if (temperatura == Temperatura.CALIENTE) {
+            System.out.println("Recordá prender el horno.");
+        }
 
-    for (String paso : pasos) {
-        System.out.println(paso);
-    }
+        for (String paso : pasos) {
+            System.out.println(paso);
+        }
 
-    if (temperatura == Temperatura.FRIO) {
-        System.out.println("Guardá la preparación en la heladera.");
+        if (temperatura == Temperatura.FRIO) {
+            System.out.println("Guardá la preparación en la heladera.");
+        }
     }
 }

@@ -8,7 +8,6 @@ public class Recetario {
     public Recetario() {
         this.recetas = new ArrayList<>();
     }
-}
 
 
     public void agregarReceta(Plato nuevaReceta) {
@@ -16,55 +15,71 @@ public class Recetario {
     }
 
     public void eliminarReceta(Plato nuevaReceta) {
-              for (Plato receta: platos){
-            if(receta.equals(nuevaReceta)){
-                platos.remove(nuevaReceta);
+        for (Plato receta : recetas) {
+            if (receta.equals(nuevaReceta)) {
+                recetas.remove(nuevaReceta);
             }
         }
     }
 
     public void modificarReceta(Plato nuevaReceta, Plato viejaReceta) {
-        for (Plato receta: platos){
-            if(receta.equals(viejaReceta)){
-                platos.remove(viejaReceta);
-                platos.add(nuevaReceta);
+        for (Plato receta : recetas) {
+            if (receta.equals(viejaReceta)) {
+                recetas.remove(viejaReceta);
+                recetas.add(nuevaReceta);
             }
         }
     }
 
     public ArrayList<Plato> buscarPorDificultad(Nivel dificultad) {
-    ArrayList<Plato> resultado = new ArrayList<>();
-    for (Plato receta : recetas) {
-        if (receta.getNivelDificultad() == dificultad) {
-            resultado.add(receta);
+        ArrayList<Plato> resultado = new ArrayList<>();
+        for (Plato receta : recetas) {
+            if (receta.getNivelDificultad() == dificultad) {
+                resultado.add(receta);
+            }
         }
-    }
-    return resultado;
+        return resultado;
     }
 
-
-    public ArrayList<Plato> filtrarPorTipo() {
-        // incompleto
-        return null;
+    public void filtrarPorTipo() {
+        ArrayList<Plato>avanzados= new ArrayList<>();
+        ArrayList<Plato>medios= new ArrayList<>();
+        ArrayList<Plato>faciles= new ArrayList<>();
+        for(Plato plato: recetas){
+            if(plato.getNivelDificultad().equals("AVANZADO")){
+                avanzados.add(plato);
+            }
+            if(plato.getNivelDificultad().equals("MEDIO")){
+                medios.add(plato);
+            }
+            if(plato.getNivelDificultad().equals("FACIL")){
+                faciles.add(plato);
+            }
+        }
     }
 
     public int totalRecetas() {
-    return recetas.size();
-     }
-
-
-  public Plato recetaConMasPasos() {
-    if (recetas.isEmpty()) {
-        return null;
+        return recetas.size();
     }
 
-    Plato maxPasos = recetas.get(0);
 
-    for (Plato receta : recetas) {
-        if (receta.getPasos().size() > maxPasos.getPasos().size()) {
-            maxPasos = receta;
+    public Plato recetaConMasPasos() {
+        if (recetas.isEmpty()) {
+            return null;
         }
+
+        Plato maxPasos = recetas.get(0);
+
+        for (Plato receta : recetas) {
+            if (receta.getPasos().size() > maxPasos.getPasos().size()) {
+                maxPasos = receta;
+            }
+        }
+
+        return maxPasos;
+
     }
 
-    return maxPasos;
+    public void main() {
+    }
 }
