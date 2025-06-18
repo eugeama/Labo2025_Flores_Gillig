@@ -1,4 +1,5 @@
-public class Employee{
+package duke.choice;
+public class Employee {
     private String nombre;
     private Departamento departamento;
     public String getNombre() {
@@ -18,8 +19,4 @@ public class Employee{
         this.departamento = departamento;
     }
   
-
-
-
-
 }
