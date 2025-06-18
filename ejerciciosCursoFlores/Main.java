@@ -1,3 +1,4 @@
+package duke.choice;
 import java.util.ArrayList;
 
 public class Main {
@@ -7,9 +8,9 @@ public class Main {
         Departamento d1 = new Departamento("Departamento 1", employeesD1);
         Departamento d2 = new Departamento("Departamento 2", employeesD2);
         
-        Employee e1 = new Employee("Julian", d1);
-        Employee e2 = new Employee("Mario", d1);
-        Employee e3 = new Employee("Francesca", d2);
+        Employee e1 = new Employee("Tobías", d1);
+        Employee e2 = new Employee("Eduardo", d1);
+        Employee e3 = new Employee("Pepe", d2);
         
         employeesD1.add(e1);
         employeesD1.add(e2);
