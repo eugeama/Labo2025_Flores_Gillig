@@ -79,7 +79,11 @@ public class Recetario {
         return maxPasos;
 
     }
+     public void limpiar() {
+        recetas.clear();
+    }
 
-    public void main() {
+    public ArrayList<Plato> getRecetas() {
+        return recetas;
     }
 }
