@@ -80,6 +80,11 @@ public  class Recetario {
 
     }
 
-    public void main() {
+      public void limpiar() {
+        recetas.clear();
+    }
+
+    public ArrayList<Plato> getRecetas() {
+        return recetas;
     }
 }
