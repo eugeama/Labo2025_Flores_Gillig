@@ -32,11 +32,15 @@ public class Clothing{
         this.precio = Math.max(price, minPrice);
     }
 
-    public String getSize() {
+    public String getTalle() {
         return talle;
     }
 
-    public void setSize(String size) {
-        this.talle = size;
+    public void setTalle(String talle) {
+        this.talle = talle;
+    }
+     @Override
+    public String toString (){
+        return getDescription() + " " + getTalle() + " " + getPrecio();
     }
 }
