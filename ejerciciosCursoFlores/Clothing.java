@@ -39,4 +39,8 @@ public class Clothing{
     public void setSize(String size) {
         this.talle = size;
     }
+    @Override
+    public String toString (){
+        return getDescription() + " " + getSize() + " " + getPrice();
+    }
 }
