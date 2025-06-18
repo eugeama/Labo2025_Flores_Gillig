@@ -41,6 +41,6 @@ public class Clothing{
     }
     @Override
     public String toString (){
-        return getDescription() + " " + getSize() + " " + getPrice();
+        return getDescription() + " " + getTalle() + " " + getPrecio();
     }
 }
