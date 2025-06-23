@@ -4,8 +4,8 @@ public class Clothing{
     String descripcion;
     double precio;
     String talle;
-    private final double minPrice= 10.0;
-    private final double minTax= 0.2;
+    private final static double minPrice= 10.0;
+    private final static double minTax= 0.2;
 
     public Clothing() {
         this.talle= "M";
