@@ -42,5 +42,22 @@ public class GestorMasc {
         }
         return null;
     }
+       public String saludar(String nombreMascota, String duenioQueSaluda) {
+        Mascota m = buscarMascota(nombreMascota);
+        if (m == null) {
+            return "Mascota no encontrada";
+        }
+        if (m instanceof Pez) {
+            Pez p = (Pez) m;
+            String respuesta = p.saludar(duenioQueSaluda);
+            if (p.getVidas() <= 0) {
+                eliminarMascota(nombreMascota);
+            }
+            return respuesta;
+        }
+
+        return m.saludar(duenioQueSaluda);
+    }
+/////FALTA MÉTODO ALIMENTAR
 }
 
