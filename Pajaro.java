@@ -32,6 +32,9 @@ public class Pajaro extends Mascota {
             this.cantoEspecial = cantoEspecial;
         }
     }
+       public void alimentar() {
+        alegria++;
+    }
 
     public String saludar() {
         if (cantor) {
@@ -39,6 +42,9 @@ public class Pajaro extends Mascota {
         } else {
             return "pio";
         }
+    }
+     public String tipoDeMascota() {
+        return "Pajaro";
     }
 }
 
