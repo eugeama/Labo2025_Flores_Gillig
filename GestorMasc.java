@@ -9,7 +9,7 @@ public class GestorMasc {
     public boolean altaMascota(Mascota m) {
         for (Mascota mascota : mascotas) {
             if (mascota.getNombre().equals(m.getNombre())) {
-                return false; // nombre repetido
+                return false;
             }
         }
         mascotas.add(m);
@@ -44,8 +44,6 @@ public class GestorMasc {
     }
        public String saludar(String nombreMascota, String duenioQueSaluda) {
         Mascota m = buscarMascota(nombreMascota);
-        if (m == null) {
-            return "Mascota no encontrada";
         }
         if (m instanceof Pez) {
             Pez p = (Pez) m;
