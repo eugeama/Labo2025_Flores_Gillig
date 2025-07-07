@@ -1,5 +1,5 @@
 package EjercicioRepaso;
-
+ 
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -93,7 +93,7 @@ public class Gestion {
         int diasTotales= 0;
         for(Desarrollador desarrollador: desarrolladores) {
             if ( (int) ChronoUnit.DAYS.between(desarrollador.getFechaIngreso(), LocalDate.now())>diasTotales){
-                diasTotales= (int) ChronoUnit.DAYS.between(LocalDate.now(), desarrollador.getFechaIngreso());
+                diasTotales= (int) ChronoUnit.DAYS.between(desarrollador.getFechaIngreso(), LocalDate.now());
                 respuesta= desarrollador.getNombreD()+""+desarrollador.getApellidoD();
             }
         }
@@ -105,7 +105,7 @@ public class Gestion {
         ArrayList<String> respuesta= new ArrayList<>();
         for(Desarrollador desarrollador: desarrolladores){
             if (desarrollador.getTicketAsignado().contains(ticketAsig)){
-                respuesta.add(desarrollador.getNombreD()+" "+desarrollador.getNombreD());
+                respuesta.add(desarrollador.getNombreD()+" "+desarrollador.getApellidoD());
             }
         }
 
@@ -113,21 +113,21 @@ public class Gestion {
     }
 
     public LocalTime tiempoRes(){
-         LocalDateTime inicio = LocalDateTime.of(ticket.getFechaCreacion(), ticket.getHoraCreacion());
-         LocalDateTime fin = LocalDateTime.of(ticket.getFechaFinalizacion(), ticket.getHoraFinalizacion());
          Duration tiempo= Duration.ZERO;
          int cant= 0;
         for(Ticket ticket: tickets){
-            if(ticket.getFechaFinalizacion().isBefore(ticket.getFechaCreacion())){
+            LocalDateTime inicio = LocalDateTime.of(ticket.getFechaCreacion(), ticket.getHoraCreacion());
+            LocalDateTime fin = LocalDateTime.of(ticket.getFechaFinalizacion(), ticket.getHoraFinalizacion());
+            if(!fin.isBefore(inicio)){
                 Duration duracion= Duration.between(inicio, fin);
-                tiempo.plus(duracion);
+                tiempo= tiempo.plus(duracion);
                 cant++;
             }
         }
         Duration total= tiempo.dividedBy(cant);
-        Long horas= total.toHours();
-        Long minutos= total.toMinutes();
+        long horas = total.toHours();
+        long minutos = total.toMinutes() % 60;
 
-        return LocalTime.of((int) (horas/24), (int) (minutos/60));
+        return LocalTime.of((int) horas, (int) minutos);
     }
 }
