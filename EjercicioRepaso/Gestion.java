@@ -92,7 +92,7 @@ public class Gestion {
         String respuesta= "";
         int diasTotales= 0;
         for(Desarrollador desarrollador: desarrolladores) {
-            if ( (int) ChronoUnit.DAYS.between(LocalDate.now(), desarrollador.getFechaIngreso())>diasTotales){
+            if ( (int) ChronoUnit.DAYS.between(desarrollador.getFechaIngreso(), LocalDate.now())>diasTotales){
                 diasTotales= (int) ChronoUnit.DAYS.between(LocalDate.now(), desarrollador.getFechaIngreso());
                 respuesta= desarrollador.getNombreD()+""+desarrollador.getApellidoD();
             }
@@ -104,7 +104,7 @@ public class Gestion {
     public ArrayList<String> desarrolladoresAsig(Ticket ticketAsig){
         ArrayList<String> respuesta= new ArrayList<>();
         for(Desarrollador desarrollador: desarrolladores){
-            if (desarrollador.getTicketAsignado().equals(ticketAsig)){
+            if (desarrollador.getTicketAsignado().contains(ticketAsig)){
                 respuesta.add(desarrollador.getNombreD()+" "+desarrollador.getNombreD());
             }
         }
@@ -113,11 +113,13 @@ public class Gestion {
     }
 
     public LocalTime tiempoRes(){
+         LocalDateTime inicio = LocalDateTime.of(ticket.getFechaCreacion(), ticket.getHoraCreacion());
+         LocalDateTime fin = LocalDateTime.of(ticket.getFechaFinalizacion(), ticket.getHoraFinalizacion());
          Duration tiempo= Duration.ZERO;
          int cant= 0;
         for(Ticket ticket: tickets){
-            if(ticket.getHoraFinalizacion().isBefore(ticket.getHoraCreacion())){
-                Duration duracion= Duration.between(ticket.getHoraCreacion(), ticket.getHoraFinalizacion());
+            if(ticket.getFechaFinalizacion().isBefore(ticket.getFechaCreacion())){
+                Duration duracion= Duration.between(inicio, fin);
                 tiempo.plus(duracion);
                 cant++;
             }
