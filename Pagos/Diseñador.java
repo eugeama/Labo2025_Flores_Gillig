@@ -69,7 +69,9 @@ public class Diseñador {
             sueldoDisc= proyectosD.getValue();
             sueldoCom= sueldoDisc*tipoD.getComision();
 
+            total= "El sueldo discriminado es: "+sueldoDisc+" y el sueldo comisionado es: "+sueldoCom;
 
+            proyectoSueldo.put(nombre, total);
         }
         return proyectoSueldo;
     }
