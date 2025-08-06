@@ -41,9 +41,7 @@ public class Diseñador {
 
     public int proyecRealizados() {
         int cantProyect = 0;
-        for (Map.Entry<String, Integer> proyectosD : proyectos.entrySet()) {
-            cantProyect = cantProyect + 1;
-        }
+        cantProyect= proyectos.size();
         return cantProyect;
     }
 
