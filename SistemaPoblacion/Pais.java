@@ -6,9 +6,14 @@ import java.util.HashSet;
 public class Pais extends Lugar{
     HashSet<Provincia>provincias;
 
-    public Pais(String nombre, int codigo, HashMap<Integer, Integer> contorno, HashSet<Provincia>provincias){
+    public Pais(String nombre, int codigo, HashSet<Coordenadas> contorno, HashSet<Provincia>provincias){
         super(nombre, codigo, contorno);
         this.provincias= provincias;
+    }
+
+    public Pais(){
+        super(" ", 0, new HashSet<>());
+        this.provincias= new HashSet<>();
     }
 
     public HashSet<Provincia> getProvincias() {
@@ -23,9 +28,7 @@ public class Pais extends Lugar{
     public int calcularPoblacion(){
         int cantidad= 0;
         for(Provincia p: provincias){
-            if(p.getCodigo()==getCodigo()) {
                 cantidad += p.calcularPoblacion();
-            }
         }
         return cantidad;
     }

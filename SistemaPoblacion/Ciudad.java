@@ -6,7 +6,7 @@ import java.util.HashSet;
 public class Ciudad extends Lugar{
     HashSet<Barrio>barrios;
 
-    public Ciudad(String nombre, int codigo, HashMap<Integer, Integer> contorno, HashSet<Barrio>barrios){
+    public Ciudad(String nombre, int codigo, HashSet<Coordenadas> contorno, HashSet<Barrio>barrios){
         super(nombre, codigo, contorno);
         this.barrios= barrios;
     }
@@ -23,9 +23,8 @@ public class Ciudad extends Lugar{
     public int calcularPoblacion(){
         int cantidad= 0;
         for(Barrio b: barrios){
-            if(b.getCodigo()==getCodigo()) {
                 cantidad += b.calcularPoblacion();
-            }
+
         }
         return cantidad;
     }

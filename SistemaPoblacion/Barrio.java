@@ -1,11 +1,12 @@
 package SistemaPoblacion;
 
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class Barrio extends Lugar{
     private int poblacion;
 
-    public Barrio(String nombre, int codigo, HashMap<Integer, Integer> contorno, int poblacion){
+    public Barrio(String nombre, int codigo, HashSet<Coordenadas> contorno, int poblacion){
         super(nombre, codigo, contorno);
         this.poblacion= poblacion;
 

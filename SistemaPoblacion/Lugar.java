@@ -1,13 +1,14 @@
 package SistemaPoblacion;
 
 import java.util.HashMap;
+import java.util.HashSet;
 
 public abstract class Lugar {
     private String nombre;
     private int codigo;
-    HashMap<Integer, Integer> contorno;
+    HashSet<Coordenadas>contorno;
 
-    public Lugar(String nombre, int codigo, HashMap<Integer, Integer> contorno) {
+    public Lugar(String nombre, int codigo, HashSet<Coordenadas> contorno) {
         this.nombre = nombre;
         this.codigo = codigo;
         this.contorno = contorno;
@@ -29,10 +30,10 @@ public abstract class Lugar {
         this.codigo = codigo;
     }
 
-    public HashMap<Integer, Integer> getContorno() {
+    public HashSet<Coordenadas> getContorno() {
         return contorno;
     }
-    public void setContorno(HashMap<Integer, Integer> contorno) {
+    public void setContorno(HashSet<Coordenadas> contorno) {
         this.contorno = contorno;
     }
 

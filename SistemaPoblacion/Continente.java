@@ -6,9 +6,14 @@ import java.util.HashSet;
 public class Continente extends Lugar{
     HashSet<Pais>paises;
 
-    public Continente(String nombre, int codigo, HashMap<Integer, Integer> contorno, HashSet<Pais>paises){
+    public Continente(String nombre, int codigo, HashSet<Coordenadas> contorno, HashSet<Pais>paises){
         super(nombre, codigo, contorno);
         this.paises= paises;
+    }
+
+    public Continente(){
+        super(" ", 0, new HashSet<>());
+        this.paises= new HashSet<>();
     }
 
     public HashSet<Pais> getPaises() {
@@ -23,9 +28,7 @@ public class Continente extends Lugar{
     public int calcularPoblacion(){
         int cantidad= 0;
         for(Pais p: getPaises()){
-            if(p.getCodigo()==getCodigo()) {
                 cantidad += p.calcularPoblacion();
-            }
         }
         return cantidad;
     }
