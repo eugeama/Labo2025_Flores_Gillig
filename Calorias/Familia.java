@@ -33,11 +33,11 @@ public class Familia {
         PersonaC persona = new PersonaC();
         int calorias= 0;
         for (PersonaC familiasT: familias) {
-            if(familiasT.getCalorias()>calorias){
+            if(familiasT.getCalorias()>calorias) {
+                calorias=calorias+1;
                 persona=familiasT;
             }
         }
-
         return persona;
     }
 
@@ -46,13 +46,12 @@ public class Familia {
         int calorias= 0;
         for (PersonaC familiasT: familias) {
             if(familiasT.getCalorias()>calorias){
+                calorias=calorias+1;
                 persona=familiasT;
             }
             else if(calorias> 0 && familiasT.getCalorias()<calorias){
                 persona=familiasT;
             }
-        }
-
         return persona;
     }
 }
