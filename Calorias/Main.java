@@ -48,10 +48,16 @@ public class Main {
 
         Familia f = new Familia(integrantes);
 
+        HashMap<Ingredientes>ing= new HashMap<>();
+        ing.put(i1,2);
+        ing.put(i2, 3);
+
         System.out.println("el promedio de calorias en la familia es: "+f.promedioFamilia());
 
         System.out.println("el integrante con más calor{ias es: "+f.masCalorias());
 
         System.out.println("el integrante con menos calorías es: "+f.menosCalorias());
+
+        System.out.println("el total de calorías es:"+f.calcularCalorias());
     }
 }
