@@ -1,13 +1,16 @@
 package Consumo_Viviendas;
 
+import java.time.Month;
+import java.time.Year;
 import java.util.HashMap;
 
 public abstract class Vivienda {
     private String direccion;
     private String cod_postal;
     private Duenio duenio;
-    private HashMap<Integer, HashMap<String, Integer>>consumos;
-    public Vivienda(String direccion, String cod_postal, Duenio duenio, HashMap<Integer, HashMap<String, Integer>>consumos){
+    private HashMap<Year, HashMap<Month, Integer>>consumos;
+
+    public Vivienda(String direccion, String cod_postal, Duenio duenio, HashMap<Year, HashMap<Month, Integer>>consumos){
         this.direccion= direccion;
         this.cod_postal= cod_postal;
         this.duenio= duenio;
@@ -38,13 +41,14 @@ public abstract class Vivienda {
         this.duenio = duenio;
     }
 
-    public HashMap<Integer, HashMap<String, Integer>> getConsumos() {
+    public HashMap<Year, HashMap<Month, Integer>> getConsumos() {
         return consumos;
     }
 
-    public void setConsumos(HashMap<Integer, HashMap<String, Integer>> consumos) {
+    public void setConsumos(HashMap<Year, HashMap<Month, Integer>> consumos) {
         this.consumos = consumos;
     }
 
-    public abstract int consumoVivienda();
+    public abstract double consumoVivienda(Year anio, Month mes);
+
 }
