@@ -49,6 +49,30 @@ public abstract class Vivienda {
         this.consumos = consumos;
     }
 
-    public abstract double consumoVivienda(Year anio, Month mes);
+    public int conseguirConsumo(Year anio, Month mes){
+        int consumo= 0;
+
+        if(getConsumos().containsKey(anio) && getConsumos().containsValue(mes)){
+            consumo= getConsumos().get(anio).get(mes);
+        }
+
+        return consumo;
+    }
+
+    public abstract int conseguirConsumo();
+
+    public double consumoVivienda(Year anio, Month mes){
+        double total= 0;
+        int actual= conseguirConsumo(anio, mes);
+        int anterior= conseguirConsumo(anio.minusYears(1), mes);
+
+        if((anterior-actual)/anterior<=10){
+            total= actual*conseguirConsumo()*0.05;
+        }
+        else{
+            total= actual*conseguirConsumo();
+        }
+        return total;
+    }
 
 }

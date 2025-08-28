@@ -41,12 +41,17 @@ public class Casa extends Vivienda {
     }
 
     @Override
+    public int conseguirConsumo() {
+        return getPago();
+    }
+
+    @Override
     public double consumoVivienda(Year anio, Month mes){
         double total= 0;
-        double actual= getConsumos().get(anio).get(mes);
-        double anterior= getConsumos().get(anio.minusYears(1)).get(mes);
+        int actual= conseguirConsumo(anio, mes);
+        int anterior= conseguirConsumo(anio.minusYears(1), mes);
 
-        if((anterior-actual)/anterior<=0.10){
+        if((anterior-actual)/anterior<=10){
             total= actual*getPago()*0.05;
         }
         else{

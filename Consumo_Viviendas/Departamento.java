@@ -29,18 +29,10 @@ public class Departamento extends Vivienda {
         Departamento.pago = pago;
     }
 
-    @Override
-    public double consumoVivienda(Year anio, Month mes){
-        double total= 0;
-        int actual= getConsumos().get(anio).get(mes);
-        int anterior= getConsumos().get(anio.minusYears(1)).get(mes);
 
-        if((anterior-actual)/anterior<=10){
-            total= actual*getPago()*0.05;
-        }
-        else{
-            total= actual*getPago();
-        }
-        return total;
+    @Override
+    public int conseguirConsumo() {
+        return getPago();
     }
+
 }
