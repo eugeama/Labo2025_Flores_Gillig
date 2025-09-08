@@ -1,19 +1,25 @@
 package Campanias;
 
-public class Telefono_Movil {
+public class Telefono_Movil implements Mensajero {
     private int numeroSerie;
     private String fabricante;
     private String modelo;
     private Compania compania;
     private int numeroCelular;
+    private boolean prendido;
+    private int credito;
 
-    public Telefono_Movil(int numeroSerie, String fabricante, String modelo, Compania compania, int numeroCelular){
+    public Telefono_Movil(int numeroSerie, String fabricante, String modelo, Compania compania, int numeroCelular, boolean prendido, int credito){
         this.numeroSerie= numeroSerie;
         this.fabricante= fabricante;
         this.modelo= modelo;
         this.compania= compania;
         this.numeroCelular= numeroCelular;
+        this.prendido= prendido;
+        this.credito= credito;
     }
+
+
 
     public int getNumeroSerie() {
         return numeroSerie;
@@ -53,5 +59,29 @@ public class Telefono_Movil {
 
     public void setModelo(String modelo) {
         this.modelo = modelo;
+    }
+
+    public boolean isPrendido() {
+        return prendido;
+    }
+
+    public void setPrendido(boolean prendido) {
+        this.prendido = prendido;
+    }
+
+    public int getCredito() {
+        return credito;
+    }
+
+    public void setCredito(int credito) {
+        this.credito = credito;
+    }
+
+    public String enviarMensaje(){
+        String respuesta= "";
+        if(prendido || credito>0){
+            respuesta= "Conectando con antena más cercana... ";
+        }
+        return respuesta;
     }
 }

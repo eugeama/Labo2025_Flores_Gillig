@@ -1,6 +1,6 @@
 package Campanias;
 
-public class Paloma_Mensajera {
+public class Paloma_Mensajera implements Mensajero {
     private String color;
     private String nombre;
     private String especie;
@@ -43,5 +43,13 @@ public class Paloma_Mensajera {
 
     public void setAprendioMapa(Boolean aprendioMapa) {
         this.aprendioMapa = aprendioMapa;
+    }
+
+    public String enviarMensaje(){
+        String respuesta= "";
+        if(aprendioMapa) {
+            respuesta= "Lanzando un papelido que dice: ";
+        }
+        return respuesta;
     }
 }
