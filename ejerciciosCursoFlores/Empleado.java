@@ -1,4 +1,4 @@
-public class Employee{
+public class Empleado{
     private String nombre;
     private Departamento departamento;
     public String getNombre() {
@@ -13,13 +13,8 @@ public class Employee{
     public void setDepartamento(Departamento departamento) {
         this.departamento = departamento;
     }
-    public Employee(String nombre, Departamento departamento) {
+    public Empleado(String nombre, Departamento departamento) {
         this.nombre = nombre;
         this.departamento = departamento;
     }
-  
-
-
-
-
 }
