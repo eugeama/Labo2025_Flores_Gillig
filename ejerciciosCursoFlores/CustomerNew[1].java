@@ -1,21 +1,15 @@
-package objetos;
-
 import objetos.ClothingNew;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class CustomerNew extends Persona
 
 {
-
     private char size;
     private ArrayList<ClothingNew> items;
-
-
+    
     public void addItems(ArrayList<ClothingNew> someItems){
         items=someItems;
-
     }
 
     public CustomerNew(int dni, int edad, LocalDate fechaNacimiento, String nombre, char size, ArrayList<ClothingNew>items) {
@@ -43,8 +37,6 @@ public class CustomerNew extends Persona
                 if(getSize()==item.getSize()) {
                     System.out.println("Iteams datos:"+" "+item.getDescription()+" "+ item.getPrice()+ " "+item.getSize());
                     total = total + item.getPrice();
-
-
             }
         }
             return total;
@@ -59,8 +51,6 @@ public class CustomerNew extends Persona
             System.out.println("Iteams datos:"+" "+item.getDescription()+" "+ item.getPrice()+ " "+item.getSize());
             promedio = promedio + item.getPrice();
             cantidad = cantidad+1;
-
-
         }
     }
     try{
@@ -100,16 +90,5 @@ public class CustomerNew extends Persona
                         break;
                         default:
                             size='x';
-        }
-
-    }
-
-
-  
-        public static void main(String[] args) {
-           
-            
-
-          
         }
     }
