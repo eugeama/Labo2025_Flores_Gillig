@@ -6,7 +6,7 @@ public class DianaRectangular extends Diana implements MetodoDiana {
     private int base;
     private int altura;
 
-    public DianaRectangular(String nombreId, String dificultad, HashMap<Color, Integer> puntajes, int base, int altura){
+    public DianaRectangular(String nombreId, String dificultad, HashMap<Integer, Color> puntajes, int base, int altura){
         super(nombreId, dificultad, puntajes);
         this.base= base;
         this.altura= altura;

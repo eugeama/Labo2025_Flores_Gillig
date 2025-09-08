@@ -3,18 +3,29 @@ package SistemaArcoFlecha;
 import java.util.HashSet;
 
 public class Bar {
+    private String nombre;
     private HashSet<Diana>dianas;
     private int clientesAyF;
     private int recaudado;
     private HashSet<Beneficio>beneficios;
     private HashSet<Acumulable>beneficiosA;
 
-    public Bar(HashSet<Diana>dianas, int clientesAyF, int recaudado, HashSet<Beneficio>beneficios, HashSet<Acumulable>beneficiosA){
+    public Bar(String nombre, HashSet<Diana>dianas, int clientesAyF, int recaudado, HashSet<Beneficio>beneficios, HashSet<Acumulable>beneficiosA){
+        this.nombre= nombre;
         this.dianas= dianas;
         this.clientesAyF= clientesAyF;
         this.recaudado= recaudado;
         this.beneficios= beneficios;
         this.beneficiosA= beneficiosA;
+    }
+
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public HashSet<Diana> getDianas() {

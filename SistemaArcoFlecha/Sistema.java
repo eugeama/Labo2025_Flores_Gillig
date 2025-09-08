@@ -1,5 +1,6 @@
 package SistemaArcoFlecha;
 
+import java.util.HashMap;
 import java.util.HashSet;
 
 public class Sistema {
@@ -35,5 +36,26 @@ public class Sistema {
 
     public void setDianas(HashSet<Diana> dianas) {
         this.dianas = dianas;
+    }
+
+    public HashMap<String, Integer> beneficiosXBar(){
+        HashMap<String, Integer>beneficiosT= new HashMap<>();
+        for(Bar b: bares){
+            beneficiosT.put(b.getNombre(),b.getBeneficios().size());
+        }
+
+        return beneficiosT;
+    }
+
+    public String dianaMasP(){
+        int mayorPuntaje= 0;
+        String diana= "";
+        for(Diana diE: dianas){
+            if(diE.getPuntajes().keySet().size()>mayorPuntaje){
+                diana= diE.getNombreId();
+                mayorPuntaje= diE.getPuntajes().keySet().size();
+            }
+        }
+        return "La diana con más puntaje es: "+diana+" con: "+mayorPuntaje+" puntos";
     }
 }

@@ -5,12 +5,18 @@ import java.util.HashMap;
 public abstract class Diana {
     private String nombreId;
     private String dificultad;
-    private HashMap<Color, Integer> puntajes;
+    private HashMap<Integer, Color> puntajes;
 
-    public Diana(String nombreId, String dificultad, HashMap<Color, Integer>puntajes){
+    public Diana(String nombreId, String dificultad, HashMap<Integer, Color>puntajes){
         this.nombreId= nombreId;
         this.dificultad= dificultad;
         this.puntajes= puntajes;
+    }
+
+    public Diana(){
+        this.nombreId= "";
+        this.dificultad= "";
+        this.puntajes= new HashMap<>();
     }
 
     public String getNombreId() {
@@ -29,11 +35,11 @@ public abstract class Diana {
         this.dificultad = dificultad;
     }
 
-    public HashMap<Color, Integer> getPuntajes() {
+    public HashMap<Integer, Color>getPuntajes() {
         return puntajes;
     }
 
-    public void setPuntajes(HashMap<Color, Integer> puntajes) {
+    public void setPuntajes(HashMap<Integer, Color> puntajes) {
         this.puntajes = puntajes;
     }
 }

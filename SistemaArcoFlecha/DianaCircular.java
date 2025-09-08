@@ -5,9 +5,10 @@ import java.util.HashMap;
 public class DianaCircular extends Diana implements MetodoDiana {
     private static int radio= 13;
 
-    public DianaCircular(String nombreId, String dificultad, HashMap<Color, Integer> puntajes){
+    public DianaCircular(String nombreId, String dificultad, HashMap<Integer, Color> puntajes){
         super(nombreId, dificultad, puntajes);
     }
+
 
     public static int getRadio() {
         return radio;
