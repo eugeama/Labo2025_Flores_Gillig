@@ -19,12 +19,14 @@ public class Ninio extends Paciente implements Costo {
     }
 
     @Override
-    public String puedeTratamiento(){
+    public Boolean puedeTratamiento(){
         if(getEdad()>3){
-            return "Tu tratamiento tardará: "+nivelTolerancia+2;
+            return true;
+            System.out.println("Tu tratamiento tardará: "+nivelTolerancia+2);
         }
         else{
-            return "Aún es muy chico para probar el tratamiento";
+            return false;
+            System.out.println("Aún es muy chico para probar el tratamiento");
         }
     }
 

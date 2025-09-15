@@ -38,12 +38,14 @@ public class Joven extends Paciente implements Costo{
     }
 
     @Override
-    public String puedeTratamiento(){
+    public Boolean puedeTratamiento(){
         if(deportes.size()/20== 0 || edadMax-getEdad()>2){
-            return "Será un tratamiento costoso, peo lo vamos a lograr";
+            return true;
+            System.out.println("Será un tratamiento costoso, peo lo vamos a lograr");
         }
         else{
-            return "lamentamos comunicarte que tu sangre no va a poder ser modificada";
+            return false;
+            System.out.println("lamentamos comunicarte que tu sangre no va a poder ser modificada");
         }
     }
 
